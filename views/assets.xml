@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Injected from web.layout (Odoo 14.0 and later).
+         The script and the stylesheet go in ``<head>`` and skip the asset bundler. -->
+    <template id="pns_ribbon_assets" inherit_id="web.layout">
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript">
+                window.pns_ribbon_data = <t t-raw="request.env['pns.ribbon.config']._ribbon_client_json() if request else '{}'"/>;
+            </script>
+            <!-- Cache-busting by module version: since these statics bypass
+                 the Odoo asset bundler, we append ``?v=<version>`` so the
+                 browser reloads ribbon.js / ribbon.css after each upgrade. -->
+            <t t-set="pns_rb_ver" t-value="request.env['ir.module.module'].sudo().search([('name', '=', 'pns_ribbon')], limit=1).latest_version if request else ''"/>
+            <link rel="stylesheet" type="text/css" t-att-href="'/pns_ribbon/static/src/css/ribbon.css?v=' + (pns_rb_ver or '0')"/>
+            <script type="text/javascript" t-att-src="'/pns_ribbon/static/src/js/ribbon.js?v=' + (pns_rb_ver or '0')"></script>
+        </xpath>
+    </template>
+
+    <!-- Legacy widgets (Odoo 14) in backend assets for the config form. -->
+    <template id="pns_ribbon_backend_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pns_ribbon/static/src/js/pns_color_field_v14.js"></script>
+            <script type="text/javascript" src="/pns_ribbon/static/src/js/pns_ribbon_history_v14.js"></script>
+        </xpath>
+    </template>
+</odoo>
