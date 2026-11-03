@@ -1,5 +1,7 @@
 # PNS Ribbon
 
+![PNS Ribbon](static/description/banner.png)
+
 One tree, every Odoo version we test, the same tests.
 `common/` plus `stacks/owl1` (Odoo 14) and `stacks/owl2` (Odoo 19) ship together. A flat branch (`14.0`, `19.0`) is generated from that tree.
 
