@@ -5,7 +5,7 @@
 
 {
     'name': 'PNS Ribbon',
-    'version': '1.0.9',
+    'version': '19.0.1.0.9',
     'category': 'Web',
     'summary': 'Visual ribbon (TEST/DEV banner) to identify non-production instances.',
     'description': """
@@ -33,7 +33,7 @@ Or via Settings > Technical > Parameters > System Parameters:
 Part of Patanegra Soft Suite.
 """,
     'author': 'PATANEGRA Soft',
-    'website': '/pns_ribbon/static/description/index.html',
+    'website': 'https://github.com/patanegra-soft/pns_ribbon',
     'depends': ['web'],
     'data': [
         'security/ir.model.access.csv',
