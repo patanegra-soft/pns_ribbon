@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.12] — 2026-11-04
+
+### Added
+- Store thumbnail (`static/description/banner_store.png`): the banner on a 2:1 canvas, so the Odoo Apps Store does not cut its sides.
+
 ## [1.0.11] — 2026-11-03
 
 ### Fixed

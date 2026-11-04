@@ -5,8 +5,8 @@
 
 {
     'name': 'PNS Ribbon',
-    'version': '14.0.1.0.11',
-    'images': ['static/description/banner.png'],
+    'version': '14.0.1.0.12',
+    'images': ['static/description/banner_store.png'],
     'category': 'Web',
     'summary': 'Visual ribbon (TEST/DEV banner) to identify non-production instances.',
     'description': """
