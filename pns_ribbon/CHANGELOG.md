@@ -1,77 +1,28 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+What changes for people who use this module, one section per published version, newest first. The heading is the git tag.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+## owl1-1.0.12_owl2-1.0.12 (2026-11-04)
 
-## [1.0.12] — 2026-11-04
+- Store page: a new 2:1 thumbnail, so the Odoo Apps listing no longer crops the sides of the banner.
 
-### Added
-- Store thumbnail (`static/description/banner_store.png`): the banner on a 2:1 canvas, so the Odoo Apps Store does not cut its sides.
+## owl1-1.0.11_owl2-1.0.11 (2026-11-03)
 
-## [1.0.11] — 2026-11-03
+- Store page and README: the banner shows the ribbon in the top-left corner, where Odoo draws it.
 
-### Fixed
-- Banner: the ribbon sits in the top-left corner, as it does in Odoo.
+## owl1-1.0.10_owl2-1.0.10 (2026-11-03)
 
-## [1.0.10] — 2026-11-03
+- Store page and README: a new banner with an example Odoo window wearing the ribbon.
 
-### Added
-- Banner (`static/description/banner.png`) for the README and the Odoo Apps Store listing.
+## owl1-1.0.9_owl2-1.0.9 (2026-11-01)
 
-## [1.0.9] — 2026-11-01
+- First public release. A diagonal ribbon in the backend corner, so a test or staging database is not mistaken for production. Configure it at Settings → Technical → PNS Ribbon: text with `{dbname}`, `{user}` and `{company}`, colours, and the last 20 colour pairs.
+- The ribbon is a plain script, outside the asset bundler, and shows as soon as the page is ready. Tested on Odoo 14.0 and 19.0; 15.0 to 18.0 coming soon; 13.0 and older not supported.
+- Security: the ribbon text is plain text (only line breaks are kept), and only Settings administrators can open or save the configuration.
+- Store page: a Source code card with the GitHub repository and the installable branches.
 
-### Changed
-- README: bugs, ideas and questions go through CONTRIBUTING. It no longer says «Patches»: pull requests are switched off.
+## Before the first public release
 
-## [1.0.8] — 2026-11-01
-
-### Fixed
-- 35 Odoo tests (colour parsing, booleans, hex to rgba, history keys) were plain `unittest` classes, which the Odoo test runner skips. They are `TransactionCase` now and run with `--test-enable`.
-
-## [1.0.7] — 2026-11-01
-
-### Changed
-- The Apps page has a *Source code* card: the GitHub repository, what `main` is (one tree, one stack per OWL generation) and how the flat branches are built. The Apps Store only reads a flat branch.
-
-## [1.0.6] — 2026-10-31
-
-### Changed
-- Supported series: Odoo 14.0 and later (tested: 14.0 and 19.0; 15.0 to 18.0 coming soon). Odoo 13 and older are not supported; README, *Odoo versions*.
-
-## [1.0.5] — 2026-10-31
-
-### Changed
-- The banner text is plain text. Line breaks are drawn as breaks; other tags are shown as text.
-- Only a Settings administrator can save the ribbon.
-
-## [1.0.4] — 2026-10-31
-
-### Changed
-- The corner banner is drawn when the page is ready, without waiting one second.
-- Apps page, README, and license notices for the public tree.
-
-## [1.0.3] — 2026-10-31
-
-### Changed
-- Technical menu renamed to *PNS Ribbon*.
-- New module icon.
-- The Apps page is the local `static/description/index.html`; the manifest `website` points to it and there is no outbound website button.
-- Published from a multi-version tree: `main` holds every Odoo version, one tag per release, and one installable branch per tested series.
-
-### Added
-- Unit tests that need no Odoo database (`unit_tests/`).
-
-## [1.0.0] — 2025-12-01
-
-### Added
-- Diagonal corner ribbon with configurable text, colors and opacity.
-- Configuration wizard at *Settings > Technical > Ribbon* (admin only).
-- Native `<input type="color">` picker with synchronized opacity slider and pasteable `rgba(...)` field.
-- Live preview of text + colors while editing.
-- History grid of the last 20 color combinations (click to reuse, × to remove).
-- Variables: `{dbname}`, `{db_name}`, `{user}`, `{company}`.
-- Master on/off switch (`pns_ribbon.enabled`) to hide the ribbon without uninstalling.
-- Shadow toggle (`pns_ribbon.shadow`) for a flatter look.
-- Framework-agnostic ribbon injection: a plain script, no asset bundler.
-- OWL1 stack (Odoo 14) and OWL2 stack (Odoo 15 and later).
+- 1.0.8 (2026-11-01): 35 Odoo tests (colour parsing, booleans, hex to rgba, history keys) were plain `unittest` classes, which the Odoo test runner skips. They are `TransactionCase` now.
+- 1.0.3 (2026-10-31): technical menu renamed to *PNS Ribbon*; new module icon; the Apps page is the local `static/description/index.html`; unit tests that need no Odoo database (`unit_tests/`).
+- 1.0.0 (2025-12-01): diagonal corner ribbon with configurable text, colours and opacity; configuration wizard (admin only) with colour picker, opacity slider and live preview; history of the last 20 colour pairs; variables `{dbname}`, `{db_name}`, `{user}`, `{company}`; on/off switch (`pns_ribbon.enabled`) and shadow toggle (`pns_ribbon.shadow`); OWL1 stack (Odoo 14) and OWL2 stack (Odoo 15 and later).
