@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Legacy widgets (Odoo 14) in backend assets for the config form. -->
+    <template id="pns_ribbon_backend_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pns_ribbon/static/src/js/pns_color_field_v14.js"></script>
+            <script type="text/javascript" src="/pns_ribbon/static/src/js/pns_ribbon_history_v14.js"></script>
+        </xpath>
+    </template>
+</odoo>
