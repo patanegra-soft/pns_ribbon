@@ -2,6 +2,10 @@
 
 What changes for people who use this module, one section per published version, newest first. The heading is the git tag.
 
+## owl1-1.0.17_owl2-1.0.17_owl3-1.0.17 (2026-11-09)
+
+- Banners (Apps store, README and site) show the seven supported series, 14.0 to 20.0; the old ones still said 14 and 19. Images only.
+
 ## owl1-1.0.16_owl2-1.0.16_owl3-1.0.16 (2026-11-09)
 
 - Odoo 15, 16, 17, 18 and 20 join 14 and 19: every series from 14.0 to 20.0 is tested and has its own flat branch.
