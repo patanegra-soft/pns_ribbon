@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2025-2026 Patanegra Soft <https://patanegra.com>
 /**
- * Recent color cards for the ribbon wizard on Odoo 14.
+ * Recent color cards for the ribbon wizard on Odoo 14 and 15.
  */
 odoo.define('pns_ribbon.PnsRibbonHistory', function (require) {
     "use strict";
     // -----------------------------------------------------------------------
-    // pns_ribbon_history — Legacy widget for Odoo 14 (owl1 / AbstractField).
+    // pns_ribbon_history — Legacy widget for Odoo 14 and 15 (owl1 / AbstractField).
     //
     // Displays a flex-wrap grid of colored cards, one per recent color
     // combination stored in the ``pns_ribbon.history`` system parameter.

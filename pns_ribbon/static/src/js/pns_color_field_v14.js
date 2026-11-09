@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2025-2026 Patanegra Soft <https://patanegra.com>
 /**
- * Color field for the ribbon wizard on Odoo 14.
+ * Color field for the ribbon wizard on Odoo 14 and 15.
  *
  * Three controls (picker, opacity, text) write one rgba string.
  */
 odoo.define('pns_ribbon.PnsColorField', function (require) {
     "use strict";
     // -----------------------------------------------------------------------
-    // pns_color — Legacy widget for Odoo 14 (owl1 / AbstractField).
+    // pns_color — Legacy widget for Odoo 14 and 15 (owl1 / AbstractField).
     //
     // Renders three synchronized controls for a single rgba(r, g, b, a)
     // value:
