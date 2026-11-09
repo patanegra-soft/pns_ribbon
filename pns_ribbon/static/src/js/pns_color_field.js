@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2025-2026 Patanegra Soft <https://patanegra.com>
 // ---------------------------------------------------------------------------
-// pns_color — OWL2 color-picker field widget (Odoo 15 and later).
+// pns_color — OWL2 color-picker field widget (Odoo 16 to 19).
 //
 // Renders three synchronized controls for a single ``rgba(r, g, b, a)``
 // value:
@@ -78,8 +78,7 @@ class PnsColorField extends Component {
     }
 
     get rawValue() {
-        const rec = this.props.record;
-        return (rec ? rec.data[this.props.name] : this.props.value) || "";
+        return this.props.record.data[this.props.name] || "";
     }
     get parts() {
         return parseRgba(this.rawValue) || { r: 0, g: 0, b: 0, a: 1 };
@@ -112,11 +111,7 @@ class PnsColorField extends Component {
 
     /** Commit *rgba* to the Odoo record (triggers onchange). */
     _commit(rgba) {
-        if (this.props.record) {
-            this.props.record.update({ [this.props.name]: rgba });
-        } else if (this.props.update) {
-            this.props.update(rgba);
-        }
+        this.props.record.update({ [this.props.name]: rgba });
     }
 
     /**
