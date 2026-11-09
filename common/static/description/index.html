@@ -105,7 +105,6 @@
     background: var(--apps-brand);
     color: #fff;
   }
-  .pns-apps-series span.soon { background: #e3e6ea; color: #8a9099; font-weight: 400; }
   @media (min-width: 700px) {
     .pns-apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
   }
@@ -142,7 +141,9 @@
       files in the page head, so an OWL upgrade does not remove the banner.
     </p>
     <p>
-      Depends only on the Community module <code>web</code>.
+      On Odoo 14 to 19 it depends only on the Community module <code>web</code>.
+      On Odoo 20 it also needs <code>pns_base</code> (Apache 2.0, Patanegra Soft Suite),
+      which brings back the access-rights file and <code>get_param</code> that Odoo 20 dropped.
     </p>
   </section>
 
@@ -174,8 +175,8 @@
   <section class="pns-apps-card">
     <h2>How to install</h2>
     <ol class="pns-apps-steps">
-      <li>Use the flat branch <code>14.0</code> or <code>19.0</code>, or run <code>install_flat.sh</code> for that series.</li>
-      <li>Put the module on the addons path, update the app list, and install Ribbon.</li>
+      <li>Use the flat branch of your series (<code>14.0</code> to <code>20.0</code>), or run <code>install_flat.sh</code> for that series.</li>
+      <li>Put the module on the addons path (on Odoo 20, <code>pns_base</code> too), update the app list, and install Ribbon.</li>
       <li>Open <strong>Settings &rarr; Technical &rarr; PNS Ribbon</strong> and set the text.</li>
     </ol>
   </section>
@@ -183,10 +184,10 @@
   <section class="pns-apps-card alt">
     <h2>Odoo versions</h2>
     <p class="pns-apps-series">
-      <span>14.0</span><span class="soon">15.0</span><span class="soon">16.0</span><span class="soon">17.0</span><span class="soon">18.0</span><span>19.0</span>
+      <span>14.0</span><span>15.0</span><span>16.0</span><span>17.0</span><span>18.0</span><span>19.0</span><span>20.0</span>
     </p>
     <p>
-      Coloured: tested, with a flat branch. Grey: coming soon.
+      Each one tested, with its flat branch.
       Odoo 13 and older are not supported: Patanegra Soft Suite starts where
       its AI can run (OWL for the chat, Python 3.7 for the engine).
     </p>
@@ -196,8 +197,8 @@
     <h2>Source code</h2>
     <p>On GitHub: <a href="https://github.com/patanegra-soft/pns_ribbon">patanegra-soft/pns_ribbon</a>.</p>
     <ul>
-      <li><code>main</code> is one tree for every series: shared code in <code>common/</code> and one stack per OWL generation (<code>owl1</code> for Odoo 14, <code>owl2</code> for 15 and later). Clone it to maintain several Odoo versions from one place.</li>
-      <li><code>./install_flat.sh 19.0 &lt;dir&gt;</code> builds the flat module of a series. The branches <code>14.0</code> and <code>19.0</code> are that result, ready for the addons path.</li>
+      <li><code>main</code> is one tree for every series: shared code in <code>common/</code> and one stack per OWL generation (<code>owl1</code> for Odoo 14 and 15, <code>owl2</code> for 16 to 19, <code>owl3</code> for 20). Clone it to maintain several Odoo versions from one place.</li>
+      <li><code>./install_flat.sh 19.0 &lt;dir&gt;</code> builds the flat module of a series. The branches <code>14.0</code> to <code>20.0</code> are that result, ready for the addons path.</li>
       <li>Tests without a database (<code>unit_tests/</code>, pytest) live in <code>main</code>. Odoo tests are in the module's <code>tests/</code>.</li>
     </ul>
     <p>Bugs: an issue, with the bug form. Ideas and questions: Discussions.</p>
@@ -212,8 +213,8 @@
       <tbody>
         <tr>
           <td><code>pns_ribbon</code></td>
-          <td>Odoo 14 and 19</td>
-          <td>This banner. Depends on <code>web</code> only.</td>
+          <td>Odoo 14 to 20</td>
+          <td>This banner. Depends on <code>web</code>; on Odoo 20, also on <code>pns_base</code>.</td>
         </tr>
       </tbody>
     </table>

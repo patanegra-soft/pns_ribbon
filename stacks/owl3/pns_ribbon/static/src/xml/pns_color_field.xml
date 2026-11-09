@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pns_ribbon.PnsColorField">
+        <div class="o_field_pns_color d-inline-flex align-items-center gap-2 flex-wrap">
+            <input type="color"
+                   t-ref="this.pickerRef"
+                   t-att-value="this.hexView"
+                   t-att-disabled="this.props.readonly"
+                   t-on-input="this.onPickerInput"
+                   t-on-change="this.onPickerChange"/>
+            <label class="d-inline-flex align-items-center gap-1 mb-0 text-muted" style="font-size:12px;">
+                <span>Opacity</span>
+                <input type="range" min="0" max="100" step="1"
+                       t-ref="this.opacityRef"
+                       style="width:90px;"
+                       t-att-value="this.opacityView"
+                       t-att-disabled="this.props.readonly"
+                       t-on-input="this.onOpacityInput"
+                       t-on-change="this.onOpacityChange"/>
+            </label>
+            <input type="text"
+                   t-ref="this.textRef"
+                   class="o_input"
+                   style="max-width:185px;"
+                   t-att-value="this.rawValue"
+                   t-att-readonly="this.props.readonly"
+                   t-on-input="this.onTextInput"
+                   t-on-change="this.onTextChange"
+                   placeholder="rgba(r, g, b, a)"/>
+        </div>
+    </t>
+</templates>

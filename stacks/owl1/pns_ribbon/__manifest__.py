@@ -5,7 +5,7 @@
 
 {
     'name': 'PNS Ribbon',
-    'version': '1.0.12',
+    'version': '1.0.16',
     'category': 'Web',
     'summary': 'Visual ribbon (TEST/DEV banner) to identify non-production instances.',
     'description': """
@@ -39,6 +39,7 @@ Part of Patanegra Soft Suite.
         'security/ir.model.access.csv',
         'data/parameters.xml',
         'views/ribbon_config_views.xml',
+        'views/layout.xml',
         'views/assets.xml',
     ],
     # Apache License 2.0 — see LICENSE file

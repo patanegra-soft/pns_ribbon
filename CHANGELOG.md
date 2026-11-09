@@ -2,6 +2,11 @@
 
 What changes for people who use this module, one section per published version, newest first. The heading is the git tag.
 
+## owl1-1.0.16_owl2-1.0.16_owl3-1.0.16 (2026-11-09)
+
+- Odoo 15, 16, 17, 18 and 20 join 14 and 19: every series from 14.0 to 20.0 is tested and has its own flat branch.
+- On Odoo 20 the module also needs `pns_base`, which brings back the access-rights file and `get_param` that Odoo 20 removed. On 14 to 19 it still depends only on `web`.
+
 ## owl1-1.0.12_owl2-1.0.12 (2026-11-04)
 
 - Store page: a new 2:1 thumbnail, so the Odoo Apps listing no longer crops the sides of the banner.

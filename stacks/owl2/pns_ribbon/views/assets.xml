@@ -16,7 +16,7 @@
         </xpath>
     </template>
 
-    <!-- OWL2 backend widgets (color picker + history grid).
+    <!-- Backend widgets (color picker + history grid).
          In Odoo 17+ assets are declared as ir.asset records with a bundle
          reference, not as inherited templates. -->
     <record id="pns_ribbon_backend_assets" model="ir.asset">

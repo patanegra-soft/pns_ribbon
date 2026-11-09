@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2025-2026 Patanegra Soft <https://patanegra.com>
 // ---------------------------------------------------------------------------
-// pns_ribbon_history — OWL2 history widget (Odoo 15 and later).
+// pns_ribbon_history — OWL2 history widget (Odoo 16 to 19).
 //
 // Displays a flex-wrap grid of colored cards, one per recent color
 // combination stored in the ``pns_ribbon.history`` system parameter.
@@ -31,8 +31,7 @@ class PnsRibbonHistory extends Component {
 
     /** Parse the JSON value from the record into an array of entries. */
     _read() {
-        const rec = this.props.record;
-        const raw = (rec ? rec.data[this.props.name] : this.props.value) || "[]";
+        const raw = this.props.record.data[this.props.name] || "[]";
         try {
             const data = JSON.parse(raw);
             return Array.isArray(data) ? data : [];
@@ -43,11 +42,7 @@ class PnsRibbonHistory extends Component {
 
     /** Apply a history entry to the wizard form fields. */
     apply(entry) {
-        const rec = this.props.record;
-        if (!rec) {
-            return;
-        }
-        rec.update({
+        this.props.record.update({
             ribbon_text: entry.text || "",
             text_color: entry.fg || "",
             bg_color: entry.bg || "",
@@ -58,24 +53,16 @@ class PnsRibbonHistory extends Component {
     async remove(entry, ev) {
         ev.stopPropagation();
         const rec = this.props.record;
-        const model = rec ? rec.resModel : "pns.ribbon.config";
         let json;
         try {
-            json = await this.orm.call(model, "action_remove_history", [entry.fg, entry.bg]);
+            json = await this.orm.call(rec.resModel, "action_remove_history", [entry.fg, entry.bg]);
         } catch (e) {
             json = JSON.stringify(this.state.entries.filter((e2) => e2 !== entry));
         }
         this.state.entries = JSON.parse(json || "[]");
         // Sync the field value: prevents a re-render / re-mount of the form
         // from reviving the just-deleted entry by reading stale JSON.
-        if (rec) {
-            try {
-                await rec.update({ [this.props.name]: json });
-            } catch (e) {
-                // On versions where the field doesn't accept update, local
-                // state is sufficient.
-            }
-        }
+        await rec.update({ [this.props.name]: json });
     }
 }
 
