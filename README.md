@@ -41,10 +41,18 @@ Or clone the flat branch of your series (`14.0` to `20.0`). Update the app list 
 
 ## Odoo versions
 
-| Series | Status |
-| :--- | :--- |
-| 14.0 – 20.0 | Tested. Flat branch published. |
-| 13.0 and older | Not supported. |
+| Series | Stack | Status | Branch |
+| :--- | :--- | :--- | :--- |
+| 14.0 | `owl1` | Tested. Flat branch published. | [`14.0`](https://github.com/patanegra-soft/pns_ribbon/tree/14.0) |
+| 15.0 | `owl1` | Tested. Flat branch published. | [`15.0`](https://github.com/patanegra-soft/pns_ribbon/tree/15.0) |
+| 16.0 | `owl2` | Tested. Flat branch published. | [`16.0`](https://github.com/patanegra-soft/pns_ribbon/tree/16.0) |
+| 17.0 | `owl2` | Tested. Flat branch published. | [`17.0`](https://github.com/patanegra-soft/pns_ribbon/tree/17.0) |
+| 18.0 | `owl2` | Tested. Flat branch published. | [`18.0`](https://github.com/patanegra-soft/pns_ribbon/tree/18.0) |
+| 19.0 | `owl2` | Tested. Flat branch published. | [`19.0`](https://github.com/patanegra-soft/pns_ribbon/tree/19.0) |
+| 20.0 | `owl3` | Tested. Flat branch published. | [`20.0`](https://github.com/patanegra-soft/pns_ribbon/tree/20.0) |
+| 13.0 and older | — | Not supported. | |
+
+Ribbon is in the [module catalog](https://www.patanegra.com/catalog.html) of Patanegra Soft Suite, with the rest of the modules and their versions.
 
 Patanegra Soft Suite starts where its AI can run. Odoo 13 has no OWL, which the AI chat is built on. Odoo 8 to 10 run on Python 2, and Odoo 11 and 12 on Python 3.5; the AI engine needs Python 3.7. The suite keeps three stacks (`owl1` for 14.0 and 15.0, `owl2` for 16.0 to 19.0, `owl3` for 20.0 and later) and none for older series.
 
