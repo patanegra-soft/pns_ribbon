@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="pns_ribbon.PnsRibbonHistory">
+    <t t-name="pns_ribbon.PnsRibbonHistory" owl="1">
         <div class="o_field_pns_ribbon_history d-flex flex-wrap gap-2">
             <t t-foreach="state.entries" t-as="entry" t-key="entry_index">
                 <div class="pns_ribbon_hist_item position-relative"
