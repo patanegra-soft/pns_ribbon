@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="pns_ribbon.PnsColorField">
+    <t t-name="pns_ribbon.PnsColorField" owl="1">
         <div class="o_field_pns_color d-inline-flex align-items-center gap-2 flex-wrap">
             <input type="color"
                    t-ref="picker"
