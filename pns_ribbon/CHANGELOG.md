@@ -2,6 +2,11 @@
 
 What changes for people who use this module, one section per published version, newest first. The heading is the git tag.
 
+## owl1-1.0.18_owl2-1.0.18_owl3-1.0.18 (2026-11-12)
+
+- Odoo 16: the colour picker and the ribbon history load again; their screen templates were missing there.
+- Apps page and README: each Odoo version links to its branch on GitHub, and the store cover is easier to read in the grid.
+
 ## owl1-1.0.17_owl2-1.0.17_owl3-1.0.17 (2026-11-09)
 
 - Banners (Apps store, README and site) show the seven supported series, 14.0 to 20.0; the old ones still said 14 and 19. Images only.
